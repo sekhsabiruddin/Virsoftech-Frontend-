@@ -5,17 +5,23 @@ const Cart = ({ value, inputValues, handleInputChange, handleAdd }) => {
     <div className="box">
       {value.map((item) => (
         <div key={item.id} className="box-content">
-          <p>{item.name}</p>
-          <p>{item.price}</p>
-          <input
-            type="number"
-            step="any"
-            placeholder="qty"
-            value={inputValues[item.id] || ""}
-            onChange={(e) => handleInputChange(e, item.id)}
-          />
-          <br />
-          <button onClick={() => handleAdd(item.id)}>ADD</button>
+          <div className="nameandprice">
+            <p>{item.name}</p>
+            <p>{item.price}</p>
+          </div>
+          <div>
+            <input
+              type="number"
+              step="any"
+              placeholder="Qty"
+              value={inputValues[item.id] || ""}
+              onChange={(e) => handleInputChange(e, item.id)}
+            />
+            <br />
+            <div className="btn">
+              <button onClick={() => handleAdd(item.id)}>ADD</button>
+            </div>
+          </div>
         </div>
       ))}
     </div>

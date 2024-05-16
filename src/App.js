@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
-import CartTable from "./CartTable"; // Import the CartTable component
+import CartTable from "./CartTable";
 
 const App = () => {
   const [inputValues, setInputValues] = useState({});
@@ -48,7 +48,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* Render the CartTable component */}
       <CartTable userAddCoin={userAddCoin} totalAmount={totalAmount} />
     </div>
   );
